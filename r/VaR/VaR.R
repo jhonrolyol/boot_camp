@@ -1,0 +1,13 @@
+
+
+
+# Cleaning 
+  rm(list = ls())
+
+  
+  
+
+
+
+
+
