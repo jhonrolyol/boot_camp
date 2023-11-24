@@ -52,8 +52,9 @@ plt.savefig('figures/ts_bcp.png')
 plt.show()
 
 ```
+Below is the figure created in Python.
 
-![]()
+![](https://github.com/jhonrolyol/boot_camp/blob/master/python/VaR/figures/ts_bcp.png)
 
 
 ## Matlab 
