@@ -24,7 +24,36 @@ It supports multiple programming paradigms, including procedural, object-oriente
 programming. Python is widely used in various domains, including web development, data science,
 artificial intelligence, and automation.
 
--
+Python code for time series data:
+```python
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+
+#%% Data import 
+
+df= pd.read_excel("data/bcp.xlsx", sheet_name = "data")
+df["fecha"] = pd.to_datetime(df["fecha"])
+df.set_index("fecha", inplace = True)
+
+
+#%% Time Series graph
+ 
+plt.figure(figsize=(12, 6))
+plt.plot(df.index, df['cierre_anterior_corregido'],
+         label='bcp', linewidth = 3, 
+         color = "cyan")
+plt.title(' ')
+plt.xlabel(' ')
+plt.ylabel(' ')
+plt.legend()
+plt.grid(True)
+plt.savefig('figures/ts_bcp.png')
+plt.show()
+
+```
+
+![]()
 
 
 ## Matlab 
