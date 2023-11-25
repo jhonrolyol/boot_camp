@@ -37,8 +37,8 @@ bayesgraph diagnostics {d_rtp:L.d_metro}
 graph export "img/g30.png", replace
 
 ```
-
 Below is the figure created in Stata.
+
 ![](https://github.com/jhonrolyol/boot_camp/blob/master/stata/img/g30.png)
 
 ## R
