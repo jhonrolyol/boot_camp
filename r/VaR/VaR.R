@@ -17,11 +17,12 @@
   #install.packages("readxl")
   #install.packages("tseries")
   #install.packages("ggplot2")
-
+  install.packages("svglite")
 # Load library ------------------------------------------------------------
   library(readxl)
   library(tseries)
   library(ggplot2)
+  library(svglite)  
 
 # Data import of excel ----------------------------------------------------
   bcp <- read_excel("data/bcp.xlsx", sheet = "bbdd")
@@ -37,24 +38,24 @@
     geom_line() +
     labs(title = "bcp series chart",
          x = "Date",
-         y = "Value") +
-    theme_minimal()
+         y = "Value") 
   
   graph1
   
   ggsave("figures/bcp_series_chart.png", plot = graph1)
-  
+  ggsave("figures/bcp_series_chart.pdf", plot = graph1)
+  ggsave("figures/bcp_series_chart.svg", plot = graph1)
   
 # r series chart ----------------------------------------------------------
   graph2 <- ggplot(bcp, aes(x = fecha, y = r)) +
     geom_line() +
     labs(title = "r series chart",
          x = "Date",
-         y = "Value") +
-    theme_minimal()
+         y = "Value") 
   
   ggsave("figures/r_series_chart.png", plot = graph2)
-  
+  ggsave("figures/r_series_chart.pdf", plot = graph2)
+  ggsave("figures/r_series_chart.svg", plot = graph2)
   
   
   
