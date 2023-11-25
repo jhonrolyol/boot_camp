@@ -1,0 +1,10 @@
+* Business calendar "mycal" created by -bcal create-
+* Created/replaced on 25 Nov 2023
+
+version 17
+dateformat ymd
+
+range 2015jan05 2018oct30
+centerdate 2015jan05
+
+omit dayofweek (Sa Su)
