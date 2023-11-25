@@ -71,8 +71,8 @@ R code for time series data:
 ```
 Below is the figure created in R.
 
-![](https://github.com/jhonrolyol/boot_camp/blob/master/r/VaR/figures/bcp_series_chart.pdf)
-![](https://github.com/jhonrolyol/boot_camp/blob/master/r/VaR/figures/r_series_chart.pdf)
+![](https://github.com/jhonrolyol/boot_camp/blob/master/r/VaR/figures/bcp_series_chart.png)
+![](https://github.com/jhonrolyol/boot_camp/blob/master/r/VaR/figures/r_series_chart.png)
 
 ## Python 
 Python is a high-level, general-purpose programming language known for its readability and versatility.
