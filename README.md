@@ -157,7 +157,7 @@ end
 
 Below is the figure created in Matlab.
 
-![]()
+![](https://github.com/jhonrolyol/boot_camp/blob/master/matlab/test/figures/impulse_response_function.png)
 
 
 
