@@ -27,11 +27,8 @@
 # Data import of excel ----------------------------------------------------
   bcp <- read_excel("data/bcp.xlsx", sheet = "bbdd")
   View(bcp)
-  
   head(bcp)
-  
   bcp$fecha <- as.Date(bcp$fecha)
-  
 
 # bcp series chart --------------------------------------------------------
   graph1 <- ggplot(bcp, aes(x = fecha, y = bcp)) +

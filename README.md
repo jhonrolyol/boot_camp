@@ -16,7 +16,63 @@ R is a programming language and free software environment for statistical comput
 It provides a wide variety of statistical and graphical techniques and is highly extensible. 
 R is widely used for statistical analysis, data visualization, and machine learning.
 
-- 
+R code for time series data:
+```r
+# Cleaning ----------------------------------------------------------------
+  rm(list = ls())
+
+# Install packages --------------------------------------------------------
+  #install.packages("readxl")
+  #install.packages("tseries")
+  #install.packages("ggplot2")
+  install.packages("svglite")
+# Load library ------------------------------------------------------------
+  library(readxl)
+  library(tseries)
+  library(ggplot2)
+  library(svglite)  
+
+# Data import of excel ----------------------------------------------------
+  bcp <- read_excel("data/bcp.xlsx", sheet = "bbdd")
+  View(bcp)
+  head(bcp)
+  bcp$fecha <- as.Date(bcp$fecha)
+
+# bcp series chart --------------------------------------------------------
+  graph1 <- ggplot(bcp, aes(x = fecha, y = bcp)) +
+    geom_line() +
+    labs(title = "bcp series chart",
+         x = "Date",
+         y = "Value") + 
+    theme( plot.margin = unit(c(0, 0, 0, 0), "cm"), # Margin of graph
+           panel.margin = unit(c(0, 0, 0, 0), "cm") # Margin of panel
+           )
+  
+  graph1
+  
+  ggsave("figures/bcp_series_chart.png", plot = graph1)
+  ggsave("figures/bcp_series_chart.pdf", plot = graph1)
+  ggsave("figures/bcp_series_chart.svg", plot = graph1)
+  
+# r series chart ----------------------------------------------------------
+  graph2 <- ggplot(bcp, aes(x = fecha, y = r)) +
+    geom_line() +
+    labs(title = "r series chart",
+         x = "Date",
+         y = "Value") + 
+    theme( plot.margin = unit(c(0, 0, 0, 0), "cm"), # Margin of graph
+           panel.margin = unit(c(0, 0, 0, 0), "cm") # Margin of panel
+           )
+  graph2
+  
+  ggsave("figures/r_series_chart.png", plot = graph2)
+  ggsave("figures/r_series_chart.pdf", plot = graph2)
+  ggsave("figures/r_series_chart.svg", plot = graph2)
+```
+Below is the figure created in R.
+
+![](https://github.com/jhonrolyol/boot_camp/blob/master/r/VaR/figures/bcp_series_chart.pdf)
+![](https://github.com/jhonrolyol/boot_camp/blob/master/r/VaR/figures/r_series_chart.pdf)
 
 ## Python 
 Python is a high-level, general-purpose programming language known for its readability and versatility.
