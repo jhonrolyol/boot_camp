@@ -246,7 +246,7 @@ pac D.metrobus // 2 AR lags
 graph export "img/g28.png", replace
 
 // Lag-order selection with arimamsoc
-arimasoc D.metrobus
+*arimasoc D.metrobus
 
 // ARIMA with metrobus
 arima metrobus, arima(2, 1, 1) //Third AR lag not significant

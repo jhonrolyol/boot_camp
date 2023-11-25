@@ -9,7 +9,37 @@ management and statistical analysis. It is widely used in social science researc
 and epidemiology. Stata allows users to manipulate and analyze data, 
 as well as generate graphs and tables.
 
--
+Stata code for time series data:
+
+```stata
+clear all
+
+use "D:\master\MSc\boot_camp\stata\var_ptmex.dta"
+
+tsset date // Stata complains that there are gaps in the date variable.
+
+// We have to let Stata know what is going on by using a business calendar:
+bcal create mycal, from (date) replace
+bcal load mycal
+generate bcaldate = bofd("mycal", date)
+format %tbmycal bcaldate
+tsset bcaldate
+
+// Lag-order selection
+varsoc d_metro d_metrobus d_trolley d_rtp, maxlag(5) // Most say 3 lags
+
+// VAR(3)
+var d_metro d_metrobus d_trolley d_rtp, lags(1 2 3)
+
+// Bayesian VAR slide
+bayes: var d_metro d_metrobus d_trolley d_rtp, lags(1 2 3)
+bayesgraph diagnostics {d_rtp:L.d_metro}
+graph export "img/g30.png", replace
+
+```
+
+Below is the figure created in Stata.
+![](https://github.com/jhonrolyol/boot_camp/blob/master/stata/img/g30.png)
 
 ## R
 R is a programming language and free software environment for statistical computing and graphics.
