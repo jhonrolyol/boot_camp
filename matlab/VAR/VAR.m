@@ -31,6 +31,8 @@ TTT=TTT';
  plot(TTT,Y(:,1),"-.g"); % Indicamos que el gráfico es una matriz 1x2 y que este subgráfico va en la posición 2
  title('Crecimiento del PBI (Var % anualizada)');
 
+ print(gcf, 'figures/graph1.png', '-dpng') % Save figure in .png
+
 clear A;
 
 %% Estimación
@@ -71,6 +73,8 @@ yirf2=yirf2(2:end,:);
  plot([yirf1(:,2) zeros(irf,1)]);
  title('Respuesta de la Inflación');
  axis tight;
+    
+ print(gcf, 'figures/graph2.png', '-dpng') % Save figure in .png
 
  figure('Name','Respuesta ante un Choque de Inflación');
  subplot(1,2,1);
@@ -82,6 +86,8 @@ yirf2=yirf2(2:end,:);
  plot([yirf2(:,2) zeros(irf,1)]);
  title('Respuesta de la Inflación');
  axis tight;
+
+ print(gcf, 'figures/graph3.png', '-dpng') % Save figure in .png
 
 clear i A0 v1 v2 irf yirf1 yirf2;
 
@@ -113,3 +119,5 @@ subplot(1,2,2);
 plot(TTT,[YM(:,2) yproy(:,2)]);
 title('Proyección de la Inflación');
 axis tight;
+
+print(gcf, 'figures/graph4.png', '-dpng') % Save figure in .png
