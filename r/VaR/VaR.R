@@ -38,7 +38,10 @@
     geom_line() +
     labs(title = "bcp series chart",
          x = "Date",
-         y = "Value") 
+         y = "Value") + 
+    theme( plot.margin = unit(c(0, 0, 0, 0), "cm"), # Margin of graph
+           panel.margin = unit(c(0, 0, 0, 0), "cm") # Margin of panel
+           )
   
   graph1
   
@@ -51,7 +54,11 @@
     geom_line() +
     labs(title = "r series chart",
          x = "Date",
-         y = "Value") 
+         y = "Value") + 
+    theme( plot.margin = unit(c(0, 0, 0, 0), "cm"), # Margin of graph
+           panel.margin = unit(c(0, 0, 0, 0), "cm") # Margin of panel
+           )
+  graph2
   
   ggsave("figures/r_series_chart.png", plot = graph2)
   ggsave("figures/r_series_chart.pdf", plot = graph2)
