@@ -1,31 +1,33 @@
-% Crear datos de ejemplo para las series de tiempo
-    tiempo = linspace(datenum('2020-01-01'), datenum('2022-12-31'), 36);
-    serie1 = cumsum(randn(1, 36));
-    serie2 = cumsum(randn(1, 36));
+% Create example data for time series
+tiempo = linspace(datenum('2020-01-01'), datenum('2022-12-31'), 36);
+serie1 = cumsum(randn(1, 36));
+serie2 = cumsum(randn(1, 36));
 
-% Crear la figura
+% Create the figure
 figure;
 
-% Graficar la primera serie de tiempo
-    subplot(2, 1, 1);
-    plot(tiempo, serie1, 'b', 'LineWidth', 2);
-    title('Serie de Tiempo 1');
-    xlabel('Fecha');
-    ylabel('Valor');
+% Plot the first time series
+subplot(2, 1, 1);
+plot(tiempo, serie1, 'b', 'LineWidth', 2);
+title('Time Series 1');
+xlabel('Date');
+ylabel('Value');
 
-% Graficar la segunda serie de tiempo
-    subplot(2, 1, 2);
-    plot(tiempo, serie2, 'r', 'LineWidth', 2);
-    title('Serie de Tiempo 2');
-    xlabel('Fecha');
-    ylabel('Valor');
+% Plot the second time series
+subplot(2, 1, 2);
+plot(tiempo, serie2, 'r', 'LineWidth', 2);
+title('Time Series 2');
+xlabel('Date');
+ylabel('Value');
 
-% Ajustar el espaciado entre subtramas
-    subplot(2, 1, 1);
-    datetick('x', 'mmm-yyyy', 'keepticks');
-    subplot(2, 1, 2);
-    datetick('x', 'mmm-yyyy', 'keepticks');
-% Guardar la figura
-        print(gcf, 'figures/time_series', '-dpng')
+% Adjust spacing between subplots
+subplot(2, 1, 1);
+datetick('x', 'mmm-yyyy', 'keepticks');
+subplot(2, 1, 2);
+datetick('x', 'mmm-yyyy', 'keepticks');
+
+% Save the figure
+print(gcf, 'figures/time_series', '-dpng');
+
         
         

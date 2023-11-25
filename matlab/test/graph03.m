@@ -1,29 +1,29 @@
 %% CLEAN WORK ENVIRONMENT
-% Limpiar la ventana de comandos y el espacio de trabajo
+% Clear the command window and workspace
     clc;
     clear all;
 
 %% VECTOR
-% Ingresar los datos en forma de vectores "x" y "y"
+% Enter data in the form of vectors "x" and "y"
     x = [1 2 3 4 5 6 7 8];
-    y =[1 1.5 2 3 4 5 8 10];
+    y = [1 1.5 2 3 4 5 8 10];
     
-%% GRAFICAR
-% Realizar la gráfica 
-    plot(x,y,'dk');
-    xlabel('Eje x');
-    ylabel('Eje y');
-    title('Regresion lineal');
+%% PLOT
+% Plot the graph
+    plot(x, y, 'dk');
+    xlabel('X-axis');
+    ylabel('Y-axis');
+    title('Linear Regression');
     axis([0 12, 0 12]);
-    grid on;% Se usa para crear lineas 
-    hold on; % Se usa para mantener la gráfica y hacer los cambios
+    grid on; % Used to create grid lines 
+    hold on; % Used to maintain the plot and make changes
 
-
-%% Guardar la figura como una imagen PNG con una resolución de 300 DPI
-    filename = 'figures/regresion.png';
+%% Save the figure as a PNG image with a resolution of 300 DPI
+    filename = 'figures/regression.png';
     saveas(gcf, filename, 'png');
 
-    disp(['Gráfico guardado como "' filename '"']);
+    disp(['Plot saved as "' filename '"']);
+
 
 
 

@@ -1,16 +1,17 @@
-%% Crear un ejemplo de datos y trazar un gráfico
-    x = linspace(0, 2*pi, 100);
-    y = sin(x);
-    plot(x, y);
-    title('Ejemplo de Gráfico');
-    xlabel('X');
-    ylabel('Y');
+%% Create an example of data and plot a graph
+x = linspace(0, 2*pi, 100);
+y = sin(x);
+plot(x, y);
+title('Example Plot');
+xlabel('X');
+ylabel('Y');
 
-%% Guardar la figura como una imagen PNG con una resolución de 300 DPI
-    filename = 'figures/grafico.png';
-    saveas(gcf, filename, 'png');
+%% Save the figure as a PNG image with a resolution of 300 DPI
+filename = 'figures/plot.png';
+saveas(gcf, filename, 'png');
 
-    disp(['Gráfico guardado como "' filename '"']);
+disp(['Plot saved as "' filename '"']);
+
 
 
 
