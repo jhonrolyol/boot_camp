@@ -24,12 +24,12 @@
 
 # Option 1
 
-# Example: Define a greet function in Julia
-# Define the greet function
-function greet(name)
-    println("Hello, $name Welcome to Julia.")
+# Define a function to calculate the square of a number
+function square(x)
+    return x^2
 end
-# Call the greet function with a specific name
-greet("Alice")
-
+# Call the function with a specific number
+result = square(5)
+# Print the result
+println("The square of 5 is: $result")
 

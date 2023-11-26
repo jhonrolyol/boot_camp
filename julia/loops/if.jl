@@ -11,21 +11,22 @@
     # ] add SymPy
 
 # Load useful packages
-using Statistics
-using Distributions
-using LinearAlgebra
-using Plots 
-using DataFrames
-using SymPy
+#using Statistics
+#using Distributions
+#using LinearAlgebra
+#using Plots 
+#using DataFrames
+#using SymPy
+
+# Shorcuts
+    # Compile julia in bash of Git: julia mi_script.jl
+    # Ctrl + s: save change
 
 
 # option 1
-
 # Example: Loop with "if" statement in Julia
-
 # Define an array of numbers
 numbers = [1, 5, 8, 12, 4, 9, 7]
-
 # Loop through each number in the array
 for number in numbers
     # Check if the number is even

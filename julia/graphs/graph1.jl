@@ -22,14 +22,15 @@
     # Compile julia in bash of Git: julia mi_script.jl
     # Ctrl + s: save change
 
-# Option 1
-
-# Example: Define a greet function in Julia
-# Define the greet function
-function greet(name)
-    println("Hello, $name Welcome to Julia.")
-end
-# Call the greet function with a specific name
-greet("Alice")
-
-
+# Example: Create a simple plot in Julia using the Plots library
+# Import the Plots library
+using Plots
+# Generate some data for the plot
+x = 1:10
+y = rand(10)
+# Create a line plot
+plot(x, y, label="Random Data", xlabel="X-axis", 
+     ylabel="Y-axis", title="Simple Plot")
+# Save figure
+savefig("figures/graph1.png")
+savefig("figures/graph1.pdf")
