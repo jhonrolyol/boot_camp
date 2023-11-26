@@ -35,16 +35,3 @@ plt.savefig("figures/graph1.png")
 # Show the plots
 plt.show()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
