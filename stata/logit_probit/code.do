@@ -5,7 +5,7 @@
 	capture log close
 
 * ruta
-	cd "D:\master\MSc\boot_camp\stata\logit"
+	cd "D:\master\MSc\boot_camp\stata\logit_probit"
 	
 * Cargar la data
 	use "data.dta", clear 
@@ -153,62 +153,51 @@ github install La-Rotonda/blogrotonda */
 	graph export "img/g8.png", replace
 
 	/*	
-		En las estimaciones por LOGIT y PROBIT (ver la gráfica)
-		son casi iguales y por eso es que los efectos 
-		marginales son muy parecidos en cualquier punto 
-		a nivel de "x" (siempre las pendientes van estar casi
-		iguales).
-
+		In the estimates by LOGIT and PROBIT (see graph) they
+		are almost equal and that is why the marginal effects
+		are very similar at any point of the "x" level (the
+		slopes will always be almost equal).
 	*/
 
-* Comparando graficamente las estimación por logit y probit
-* con la estimación del modelo de probabilidad lineal(mco).
-graph twoway || line phatprobit x || line phatlogit x || lfit y x, name(g9)
-graph export "img/g9.png", replace
+* Graphical comparison of logit and probit estimates
+* with the estimation of the linear probability model (ols).
+	graph twoway || line phatprobit x || line phatlogit x || lfit y x, name(g9)
+	graph export "img/g9.png", replace
 
 	/*
-		En este caso (ver la gráfica) se oberva la estimación
-		por el modelo de probabilidad lineal y la estimación por
-		los modelos logit y probit. Donde, la estimación por logit
-		y probit se vé como una "S" alargada con un efecto marginal 
-		cambiante, mientras que la estimación por el modelo de 
-		probabilidad lineal(mco) tiene un efecto marginal 
-		constante (es la línea recta con pendiente constante).
-		Y si se calcula el efecto marginal en la zona
-		media o parte central ya no habría tanta diferencia en los
-		efectos  marginales (ver la intersección en la gráfica).
-		
+		In this case (see graph) the estimation is observed using the
+		linear probability model and the estimation using the logit
+		and probit models. Where, the logit and probit estimation looks
+		like an elongated "S" with a changing marginal effect, while 
+		the estimation by the linear probability model (lco) has a 
+		constant marginal effect (it is the straight line with a
+		constant slope). And if the marginal effect is calculated 
+		in the area of ​​the middle or central part, there would no
+		longer be so much difference in the marginal effects (see 
+		intersection in the graph).
 	*/
 
-* Para poder tener un gráfico más claro
-* le agregamos los puntos del diagrama de 
-* dispersión
-graph twoway || line phatprobit x ///
-			 || line phatlogit x ///
-			 || lfit y x ///
-			 || scatter y x, name(g10)
-graph export "img/g10.png", replace
-		
-		
-line phatprobit phatlogit x || lfit y x || scatter y x, name(g11)
-graph export "img/g11.png", replace
+* To have a clearer graph
+* we add the points of the diagram
+* dispersion
+	graph twoway || line phatprobit x ///
+				 || line phatlogit x ///
+				 || lfit y x ///
+				 || scatter y x, name(g10)
+	graph export "img/g10.png", replace
+			
+			
+	line phatprobit phatlogit x || lfit y x || scatter y x, name(g11)
+	graph export "img/g11.png", replace
 
-// Graficar las líneas de ajuste, línea de regresión lineal y puntos de dispersión
-twoway (line phatprobit x, lcolor(blue) lpattern(dash)) ///
-       (line phatlogit x, lcolor(red) lpattern(dash)) ///
-       (lfit y x, lcolor(black)) ///
-       (scatter y x, mcolor(black) msymbol(circle)), legend(label(1 "Probit") label(2 "Logit") label(3 "Regresión Lineal") label(4 "Puntos de Dispersión")) name(g12)
-graph export "img/g12.png", replace
-
-
-
-	   
-	   
-
-
-
-
-
-
-
+// Plot the fit lines, linear regression line
+// and scatter points
+	twoway (line phatprobit x, lcolor(blue) lpattern(dash)) ///
+				 (line phatlogit x, lcolor(red) lpattern(dash)) ///
+				 (lfit y x, lcolor(black)) ///
+				 (scatter y x, mcolor(black) msymbol(circle)),/// 
+				 legend(label(1 "Probit") label(2 "Logit") /// 
+				 label(3 "Regresión Lineal") label(4 "Puntos de Dispersión")) ///
+				 name(g12)
+	graph export "img/g12.png", replace
 
