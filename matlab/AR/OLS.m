@@ -11,3 +11,5 @@ function [B,sigma2]=OLS(Y,X);
  sigma2=(ee'*ee)/(T-K); % Varianza Estimada
 
 end
+
+

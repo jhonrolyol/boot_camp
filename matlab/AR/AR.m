@@ -3,7 +3,8 @@
 %%%%%%%%%%%%%%% Danilo Gallardo %%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clear all;
+clear;
+close all;
 clc;
 
 %addpath Functions;
