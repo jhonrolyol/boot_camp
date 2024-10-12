@@ -11,15 +11,13 @@ disp(A);
 disp('Inverse using Gauss-Jordan:');
 disp(inverse_A);
 
-%% Matrix B
+%% Matrix B - ¿?
 B = [6, 0, 7; 4, 0, 5; 1, 2, 3];
 inverse_B = inverseGaussJordan(B);
 disp('Original Matrix:');
 disp(B);
 disp('Inverse using Gauss-Jordan:');
 disp(inverse_B);
-
-% ¿?
 
 
 

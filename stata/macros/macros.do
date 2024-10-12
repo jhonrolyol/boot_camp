@@ -26,5 +26,5 @@
 	global figures "path"
 	
 	use "{$data}\data.xslx", clear 
-	graph export "{$figures}\name.png", clear 
+	graph export "{$figures}\name.png", replace
 	

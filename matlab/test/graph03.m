@@ -1,7 +1,8 @@
 %% CLEAN WORK ENVIRONMENT
 % Clear the command window and workspace
     clc;
-    clear all;
+    clear;
+    close all;
 
 %% VECTOR
 % Enter data in the form of vectors "x" and "y"
@@ -23,9 +24,5 @@
     saveas(gcf, filename, 'png');
 
     disp(['Plot saved as "' filename '"']);
-
-
-
-
 
 
